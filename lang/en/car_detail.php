@@ -1,0 +1,21 @@
+<?php
+return [
+    'back' => 'Back to catalog',
+    'year' => 'Year',
+    'fuel' => 'Fuel',
+    'transmission' => 'Transmission',
+    'mileage' => 'Mileage',
+    'condition' => 'Condition',
+    'color' => 'Color',
+    'price' => 'Price',
+    'reserve' => 'Reserve this vehicle',
+    'buy_now' => 'Buy now',
+    'add_compare' => 'Add to comparison',
+    'description' => 'Description',
+    'specs' => 'Specifications',
+    'print_sheet' => 'Print Technical Sheet',
+    'date' => 'Date',
+    'ref' => 'Ref',
+    'brand' => 'Brand',
+    'model' => 'Model',
+];

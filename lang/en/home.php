@@ -1,0 +1,23 @@
+<?php
+return [
+    'featured_title' => 'Featured Vehicles',
+    'featured_subtitle' => 'Our exclusive selection of premium vehicles',
+    'view_all' => 'View All',
+    'why_title' => 'Why Apex Car?',
+    'why_subtitle' => 'Your trusted partner for purchasing your vehicle',
+    'quality_title' => 'Guaranteed Quality',
+    'quality_desc' => 'Every vehicle is rigorously inspected and certified',
+    'best_price_title' => 'Best Prices',
+    'best_price_desc' => 'Competitive prices directly from the dealer',
+    'finance_title' => 'Flexible Financing',
+    'finance_desc' => 'Financing solutions tailored to your needs',
+    'service_title' => 'Premium Service',
+    'service_desc' => 'Personalized support throughout your purchase',
+    'stats_vehicles' => 'Vehicles',
+    'stats_brands' => 'Brands',
+    'stats_clients' => 'Happy Clients',
+    'stats_years' => 'Years of Experience',
+    'cta_title' => 'Find your ideal car',
+    'cta_subtitle' => 'Browse our catalog and discover hundreds of available vehicles',
+    'cta_button' => 'View Catalog',
+];

@@ -1,0 +1,23 @@
+<?php
+return [
+    'featured_title' => 'سيارات مميزة',
+    'featured_subtitle' => 'مجموعتنا الحصرية من السيارات الفاخرة',
+    'view_all' => 'عرض الكل',
+    'why_title' => 'لماذا أبكس كار',
+    'why_subtitle' => 'شريكك الموثوق لشراء سيارتك',
+    'quality_title' => 'جودة مضمونة',
+    'quality_desc' => 'كل سيارة تتم فحصها واعتمادها بدقة',
+    'best_price_title' => 'أفضل الأسعار',
+    'best_price_desc' => 'أسعار تنافسية مباشرة من الوكيل',
+    'finance_title' => 'تمويل مرن',
+    'finance_desc' => 'حلول تمويل مخصصة لاحتياجاتك',
+    'service_title' => 'خدمة متميزة',
+    'service_desc' => 'مرافقة شخصية طوال عملية الشراء',
+    'stats_vehicles' => 'سيارات',
+    'stats_brands' => 'علامات تجارية',
+    'stats_clients' => 'عملاء راضون',
+    'stats_years' => 'سنوات من الخبرة',
+    'cta_title' => 'اعثر على سيارتك المثالية',
+    'cta_subtitle' => 'تصفح كتالوجنا واكتشف مئات السيارات المتاحة',
+    'cta_button' => 'عرض الكتالوج',
+];

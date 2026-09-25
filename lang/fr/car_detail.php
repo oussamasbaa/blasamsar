@@ -1,0 +1,21 @@
+<?php
+return [
+    'back' => 'Retour au catalogue',
+    'year' => 'Année',
+    'fuel' => 'Carburant',
+    'transmission' => 'Transmission',
+    'mileage' => 'Kilométrage',
+    'condition' => 'État',
+    'color' => 'Couleur',
+    'price' => 'Prix',
+    'reserve' => 'Réserver ce véhicule',
+    'buy_now' => 'Acheter maintenant',
+    'add_compare' => 'Ajouter à la comparaison',
+    'description' => 'Description',
+    'specs' => 'Spécifications',
+    'print_sheet' => 'Imprimer Fiche Technique',
+    'date' => 'Date',
+    'ref' => 'Réf',
+    'brand' => 'Marque',
+    'model' => 'Modèle',
+];

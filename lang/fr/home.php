@@ -1,0 +1,23 @@
+<?php
+return [
+    'featured_title' => 'Véhicules en Vedette',
+    'featured_subtitle' => 'Notre sélection exclusive de véhicules premium',
+    'view_all' => 'Voir tout',
+    'why_title' => 'Pourquoi Apex Car ?',
+    'why_subtitle' => 'Votre partenaire de confiance pour l\'achat de votre véhicule',
+    'quality_title' => 'Qualité Garantie',
+    'quality_desc' => 'Chaque véhicule est rigoureusement inspecté et certifié',
+    'best_price_title' => 'Meilleurs Prix',
+    'best_price_desc' => 'Des prix compétitifs directement chez le concessionnaire',
+    'finance_title' => 'Financement Flex',
+    'finance_desc' => 'Solutions de financement adaptées à vos besoins',
+    'service_title' => 'Service Premium',
+    'service_desc' => 'Un accompagnement personnalisé tout au long de votre achat',
+    'stats_vehicles' => 'Véhicules',
+    'stats_brands' => 'Marques',
+    'stats_clients' => 'Clients Satisfaits',
+    'stats_years' => 'Années d\'Expérience',
+    'cta_title' => 'Trouvez votre voiture idéale',
+    'cta_subtitle' => 'Parcourez notre catalogue et découvrez des centaines de véhicules disponibles',
+    'cta_button' => 'Voir le Catalogue',
+];

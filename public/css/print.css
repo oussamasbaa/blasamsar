@@ -1,0 +1,139 @@
+/* Print Styles for Fiche Technique */
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        background: white !important;
+        color: #111 !important;
+        font-family: 'Montserrat', Arial, sans-serif !important;
+        font-size: 12pt;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav, footer, .chat-widget, [x-data*="open"],
+    .btn-premium, .btn-outline, .glass,
+    form, .flex.flex-col.gap-4, .mt-6,
+    .grid.grid-cols-4, .py-16, .bg-zinc-900\/50,
+    .border-y, .animate-fade-in, .hero-zoom {
+        display: none !important;
+    }
+
+    /* Show only the print sheet */
+    .print-sheet {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20mm;
+        background: white !important;
+        color: #111 !important;
+        z-index: 9999;
+    }
+
+    .print-sheet * {
+        color: #111 !important;
+        background: transparent !important;
+        border-color: #ddd !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .print-sheet h1 {
+        font-size: 24pt;
+        font-weight: 900;
+        margin-bottom: 5px;
+    }
+
+    .print-sheet .print-brand {
+        font-size: 14pt;
+        color: #B8860B !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .print-sheet .print-price {
+        font-size: 20pt;
+        font-weight: 900;
+        color: #B8860B !important;
+    }
+
+    .print-sheet table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+    }
+
+    .print-sheet table th,
+    .print-sheet table td {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 11pt;
+    }
+
+    .print-sheet table th {
+        background: #f5f5f5 !important;
+        font-weight: 700;
+        width: 40%;
+    }
+
+    .print-sheet .print-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 3px solid #B8860B;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .print-sheet .print-logo {
+        font-size: 18pt;
+        font-weight: 900;
+    }
+
+    .print-sheet .print-date {
+        font-size: 10pt;
+        color: #888 !important;
+        text-align: right;
+    }
+
+    .print-sheet .print-footer {
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        margin-top: 30px;
+        font-size: 9pt;
+        color: #888 !important;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .print-sheet .print-desc {
+        margin: 15px 0;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 10pt;
+        line-height: 1.6;
+    }
+
+    /* Page break handling */
+    .print-sheet h2 {
+        page-break-after: avoid;
+    }
+
+    .print-sheet table {
+        page-break-inside: avoid;
+    }
+}
+
+/* Hidden by default, shown only in print */
+.print-sheet {
+    display: none;
+}

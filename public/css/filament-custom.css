@@ -1,0 +1,207 @@
+/* 
+    PREMIUM APEX CAR ADMIN THEME 
+    Elegant, Dark, Gold
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --font-family: 'Outfit', sans-serif;
+    --gold: #D4AF37;
+    --gold-light: #FFD700;
+    --gold-dark: #B8860B;
+    --gold-accent: #C5A028;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+}
+
+body {
+    font-family: 'Outfit', sans-serif !important;
+    background-color: #020202 !important;
+}
+
+.dark {
+    --fi-body-bg: #020202;
+    --fi-card-bg: #080808;
+    --fi-sidebar-bg: #050505;
+}
+
+/* --- SIDEBAR --- */
+.fi-sidebar {
+    background-color: #050505 !important;
+    border-right: 1px solid #1a1710 !important;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.fi-sidebar-header {
+    background: linear-gradient(180deg, #100d00 0%, #050505 100%) !important;
+    border-bottom: 1px solid #2a2200 !important;
+}
+
+.fi-sidebar-item-button {
+    border-radius: 12px !important;
+    margin: 4px 12px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.fi-sidebar-item-button:hover {
+    background: rgba(212, 175, 55, 0.08) !important;
+    color: #D4AF37 !important;
+    transform: translateX(5px);
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-button {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 100%) !important;
+    border-left: 4px solid #D4AF37 !important;
+    color: #FFD700 !important;
+    box-shadow: -5px 0 15px rgba(212, 175, 55, 0.1);
+}
+
+/* --- SIDEBAR FOOTER BUTTON --- */
+.fi-sidebar-footer-button {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: calc(100% - 24px) !important;
+    margin: 8px 12px !important;
+    padding: 10px 14px !important;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(184, 134, 11, 0.08) 100%) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: 12px !important;
+    color: #D4AF37 !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.3px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fi-sidebar-footer-button::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.fi-sidebar-footer-button:hover::before {
+    left: 100% !important;
+}
+
+.fi-sidebar-footer-button:hover {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(184, 134, 11, 0.15) 100%) !important;
+    border-color: rgba(212, 175, 55, 0.5) !important;
+    color: #FFD700 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* --- TOPBAR --- */
+.fi-topbar {
+    background-color: rgba(5, 5, 5, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid #1a1710 !important;
+}
+
+/* --- CARDS & SECTIONS --- */
+.fi-section, .fi-ta-ctn, .fi-modal-window {
+    background-color: #080808 !important;
+    border: 1px solid #1f1c14 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+    overflow: hidden;
+}
+
+.fi-section-header {
+    background: linear-gradient(90deg, #0d0c08 0%, #080808 100%) !important;
+    border-bottom: 1px solid #1a1810 !important;
+}
+
+/* --- INPUTS & FORMS --- */
+input, select, textarea {
+    background-color: #0c0c0c !important;
+    border: 1px solid #222018 !important;
+    border-radius: 10px !important;
+    color: #eee !important;
+    transition: all 0.2s !important;
+}
+
+input:focus, select:focus {
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2) !important;
+    outline: none !important;
+}
+
+/* --- BUTTONS --- */
+.fi-btn-color-primary {
+    background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: #0a0a0a !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+.fi-btn-color-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5) !important;
+    filter: brightness(1.1);
+}
+
+/* --- TABLE TWEAKS --- */
+.fi-ta-header-cell {
+    background-color: #0d0c08 !important;
+    color: #998c60 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 1px !important;
+}
+
+.fi-ta-row:hover {
+    background-color: rgba(212, 175, 55, 0.03) !important;
+}
+
+/* --- LOGO TEXT --- */
+.fi-logo {
+    color: #D4AF37 !important;
+    font-weight: 900 !important;
+    letter-spacing: -1px !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* --- BADGES --- */
+.fi-badge {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(184, 134, 11, 0.1) 100%) !important;
+    color: #FFD700 !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #020202; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+/* --- ANIMATIONS --- */
+@keyframes goldPulse {
+    0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
+}
+
+.fi-sidebar-item-active {
+    animation: goldPulse 2s infinite;
+}
+
+/* --- STAT CARDS --- */
+.fi-wi-stat-widget-value {
+    color: #D4AF37 !important;
+}

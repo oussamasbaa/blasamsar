@@ -1,11 +1,503 @@
-@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@layer base {
+    body {
+        @apply bg-[#0a0a0a] text-white antialiased transition-all duration-500;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+/* ============================================================
+   PROPER LIGHT MODE — replaces the old filter:invert hack
+   ============================================================ */
+
+/* --- Body & global text --- */
+html.light-mode body {
+    background-color: #f5f5f4 !important;
+    color: #1c1917 !important;
+}
+
+/* --- Navigation --- */
+html.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode nav a,
+html.light-mode nav button,
+html.light-mode nav span {
+    color: #44403c;
+}
+html.light-mode nav a:hover,
+html.light-mode nav button:hover {
+    color: #b45309 !important;
+}
+html.light-mode nav a.text-amber-500,
+html.light-mode nav .text-amber-500 {
+    color: #d97706 !important;
+}
+/* Logo text in nav */
+html.light-mode nav .text-white,
+html.light-mode nav [class~="font-black"][class~="text-white"] {
+    color: #0a0a0a !important;
+}
+/* User dropdown button */
+html.light-mode nav [class*="bg-white/5"] {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+html.light-mode nav [class*="bg-white/5"]:hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+/* Mobile menu */
+html.light-mode [class*="bg-black/95"] {
+    background-color: rgba(255, 255, 255, 0.97) !important;
+}
+
+/* --- Glass component (cards / panels) --- */
+html.light-mode .glass {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* --- Car card dark variant --- */
+html.light-mode .car-card-dark {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode .car-card-dark [class*="border-white"] {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* --- Why-us card --- */
+html.light-mode .why-card {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode .why-card:hover {
+    border-color: rgba(217, 119, 6, 0.3) !important;
+}
+
+/* --- Generic text color overrides --- */
+html.light-mode .text-white {
+    color: #1c1917 !important;
+}
+html.light-mode .text-gray-300 {
+    color: #57534e !important;
+}
+html.light-mode .text-gray-400 {
+    color: #78716c !important;
+}
+html.light-mode .text-gray-500 {
+    color: #a8a29e !important;
+}
+html.light-mode .text-gray-600 {
+    color: #57534e !important;
+}
+
+/* Preserve amber & status colors */
+html.light-mode .text-amber-500 {
+    color: #d97706 !important;
+}
+html.light-mode .text-amber-600 {
+    color: #b45309 !important;
+}
+html.light-mode .text-green-400 {
+    color: #16a34a !important;
+}
+html.light-mode .text-yellow-400 {
+    color: #ca8a04 !important;
+}
+html.light-mode .text-red-500 {
+    color: #dc2626 !important;
+}
+
+/* --- Border overrides (attribute selectors to avoid circular @apply) --- */
+html.light-mode [class*="border-white/5"],
+html.light-mode [class*="border-white/10"],
+html.light-mode [class*="border-white/20"] {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode [class*="divide-white/5"] > * + * {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode [class*="border-amber-600/10"] {
+    border-color: rgba(217, 119, 6, 0.12) !important;
+}
+html.light-mode [class*="border-amber-600/20"] {
+    border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+/* --- Background overrides --- */
+html.light-mode [class*="bg-"][class*="#0a0a0a"] {
+    background-color: #f5f5f4 !important;
+}
+html.light-mode [class*="bg-zinc-900/80"] {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+html.light-mode [class*="bg-zinc-900/50"] {
+    background-color: rgba(245, 245, 244, 0.7) !important;
+}
+html.light-mode [class*="bg-zinc-900/30"] {
+    background-color: rgba(245, 245, 244, 0.5) !important;
+}
+html.light-mode .bg-zinc-900 {
+    background-color: #ffffff !important;
+}
+html.light-mode .bg-zinc-800 {
+    background-color: #f5f5f4 !important;
+}
+html.light-mode .bg-zinc-950 {
+    background-color: #1c1917 !important;
+}
+html.light-mode .bg-black {
+    background-color: #ffffff !important;
+}
+html.light-mode [class*="bg-black/60"],
+html.light-mode [class*="bg-black/80"] {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+html.light-mode [class*="bg-white/5"] {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+html.light-mode [class*="bg-white/10"] {
+    background-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode [class*="bg-white/20"] {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- Hero section gradient overlay --- */
+html.light-mode [class*="bg-gradient-to-b"][class*="from-black"] {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.15), rgba(245,245,244,1)) !important;
+}
+
+/* --- Stats bar --- */
+html.light-mode .border-y[class*="border-white"][class*="bg-zinc-900"] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* --- Newsletter / CTA section --- */
+html.light-mode [class*="bg-gradient-to-r"][class*="from-amber-900"] {
+    background: linear-gradient(to right, rgba(217,119,6,0.06), rgba(217,119,6,0.03), rgba(217,119,6,0.06)) !important;
+}
+
+/* --- Buttons: preserve amber premium buttons --- */
+html.light-mode .btn-premium {
+    color: #ffffff !important;
+}
+html.light-mode .btn-outline {
+    border-color: #d97706 !important;
+    color: #b45309 !important;
+}
+html.light-mode .btn-outline:hover {
+    background-color: #d97706 !important;
+    color: #ffffff !important;
+}
+
+/* --- Tab buttons --- */
+html.light-mode .tab-btn:not(.active) {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    color: #57534e !important;
+}
+html.light-mode .tab-btn:not(.active):hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- Form inputs --- */
+html.light-mode input,
+html.light-mode select,
+html.light-mode textarea {
+    background-color: #fafaf9 !important;
+    border-color: #d6d3d1 !important;
+    color: #1c1917 !important;
+}
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+    color: #a8a29e !important;
+}
+html.light-mode input:focus,
+html.light-mode select:focus,
+html.light-mode textarea:focus {
+    border-color: #d97706 !important;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15) !important;
+}
+html.light-mode option {
+    background-color: #ffffff !important;
+    color: #1c1917 !important;
+}
+
+/* --- Filter sidebar selects --- */
+html.light-mode .bg-zinc-800.border.border-black {
+    background-color: #fafaf9 !important;
+    border-color: #d6d3d1 !important;
+    color: #1c1917 !important;
+}
+
+/* --- Badges (condition / status) --- */
+html.light-mode [class*="bg-green-500/20"] {
+    background-color: rgba(22, 163, 74, 0.12) !important;
+}
+html.light-mode [class*="bg-yellow-500/20"] {
+    background-color: rgba(202, 138, 4, 0.12) !important;
+}
+html.light-mode [class*="bg-amber-600/10"] {
+    background-color: rgba(217, 119, 6, 0.08) !important;
+}
+
+/* --- Footer: keep footer dark for premium contrast --- */
+html.light-mode footer.bg-zinc-950 {
+    background-color: #1c1917 !important;
+}
+html.light-mode footer .text-white,
+html.light-mode footer .font-black {
+    color: #ffffff !important;
+}
+html.light-mode footer .text-gray-500,
+html.light-mode footer .text-gray-400 {
+    color: #a8a29e !important;
+}
+html.light-mode footer .text-gray-600 {
+    color: #78716c !important;
+}
+html.light-mode footer [class*="border-white"] {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+html.light-mode footer [class*="bg-white/5"] {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+html.light-mode footer [class*="bg-white/5"]:hover {
+    background-color: #d97706 !important;
+}
+html.light-mode footer .text-amber-500 {
+    color: #f59e0b !important;
+}
+html.light-mode footer a:hover {
+    color: #f59e0b !important;
+}
+
+/* --- Page header (admin inner pages) --- */
+html.light-mode [class*="bg-zinc-900/50"][class*="border-b"][class*="border-white"] {
+    background-color: #ffffff !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* --- Tables --- */
+html.light-mode table [class*="bg-white/5"] {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+html.light-mode table tr:hover {
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+html.light-mode table [class*="divide-white"] > * + * {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* --- Pagination --- */
+html.light-mode nav[role="navigation"] span,
+html.light-mode nav[role="navigation"] a {
+    color: #57534e !important;
+}
+html.light-mode nav[role="navigation"] span[aria-current] {
+    background-color: #d97706 !important;
+    color: #ffffff !important;
+}
+
+/* --- Dropdown menus --- */
+html.light-mode [class*="bg-black/80"] {
+    background-color: rgba(255, 255, 255, 0.97) !important;
+}
+
+/* --- Swiper on light mode --- */
+html.light-mode .swiper-pagination-bullet {
+    background: #1c1917 !important;
+}
+
+/* --- Scrollbar for light mode --- */
+html.light-mode ::-webkit-scrollbar-track {
+    background: #f5f5f4;
+}
+html.light-mode ::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+}
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: #d97706;
+}
+
+/* --- WhatsApp button: keep green --- */
+html.light-mode .bg-green-600 {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+}
+html.light-mode .bg-green-600:hover {
+    background-color: #15803d !important;
+}
+
+/* --- Compare button light mode --- */
+html.light-mode [class*="border-white/20"] {
+    border-color: rgba(0, 0, 0, 0.12) !important;
+    color: #1c1917 !important;
+}
+
+/* --- Body background style attribute override --- */
+html.light-mode [style*="background-color: #0a0a0a"],
+html.light-mode [style*="background-color:#0a0a0a"] {
+    background-color: #f5f5f4 !important;
+}
+
+/* --- Smooth transition when toggling modes --- */
+html.light-mode,
+html.light-mode body,
+html.light-mode nav,
+html.light-mode .glass,
+html.light-mode .car-card-dark,
+html.light-mode .why-card {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+@layer components {
+    .glass {
+        @apply bg-zinc-900/80 border border-white/5 shadow-2xl backdrop-blur-md rounded-2xl;
+    }
+
+    .btn-premium {
+        @apply px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-800 hover:from-amber-500 hover:to-amber-700 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/20 active:scale-95;
+    }
+
+    .btn-outline {
+        @apply px-6 py-3 border-2 border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white font-bold rounded-xl transition-all duration-300;
+    }
+
+    /* Car card inspired by luxuryauto.ma */
+    .car-card {
+        @apply bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+    }
+
+    .car-card-dark {
+        @apply bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+    }
+
+    /* Tab buttons */
+    .tab-btn {
+        @apply px-8 py-3 rounded-full font-bold text-sm transition-all duration-300;
+    }
+
+    .tab-btn.active {
+        @apply bg-amber-600 text-white shadow-lg shadow-amber-600/30;
+    }
+
+    .tab-btn:not(.active) {
+        @apply bg-white/10 text-gray-300 hover:bg-white/20;
+    }
+
+    /* Section title accent */
+    .section-accent {
+        @apply text-amber-500 text-sm font-bold uppercase tracking-widest mb-2 block;
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-black mb-4;
+    }
+
+    /* Brand pill */
+    .brand-pill {
+        @apply px-5 py-2 rounded-full text-sm font-bold cursor-pointer transition-all duration-200;
+    }
+
+    .brand-pill.active {
+        @apply bg-amber-600 text-white;
+    }
+
+    .brand-pill:not(.active) {
+        @apply bg-white/5 text-gray-400 hover:bg-white/10;
+    }
+
+    /* Why us card */
+    .why-card {
+        @apply glass p-8 text-center hover:border-amber-600/30 transition-all duration-300 hover:-translate-y-1;
+    }
+
+    /* Meta info row */
+    .meta-badge {
+        @apply flex items-center gap-1.5 text-xs text-gray-500 font-medium;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+.hero-zoom {
+    animation: heroZoom 8s ease-out forwards;
+}
+
+/* Scrollable brand row */
+.brand-scroll::-webkit-scrollbar { display: none; }
+.brand-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Hide scrollbar for slider */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Swiper Premium Customization */
+:root {
+    --swiper-theme-color: #d97706;
+    --swiper-navigation-size: 18px;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.3 !important;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1 !important;
+    width: 14px !important;
+    border-radius: 4px !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background: rgba(0, 0, 0, 0.2);
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    border: 1px border-white/10;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background: rgba(217, 119, 6, 0.8);
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 12px !important;
+    font-weight: 900;
 }
